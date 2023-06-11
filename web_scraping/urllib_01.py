@@ -4,4 +4,3 @@ url = "http://wwww.baidu.com"
 
 response = urllib.request.urlopen(url=url)
 print(response.read().decode("utf-8"))
-

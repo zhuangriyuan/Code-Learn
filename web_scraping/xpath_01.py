@@ -21,3 +21,6 @@ r = tree.xpath('//div[@class="song]/p[3]/text()')[0]
 r = tree.xpath('//div[@class="song]/p[3]//text()')[0]
 # 拿到img标签中src的属性
 r = tree.xpath('//div[@class="song"]/img/@src')
+
+# .表示当前标签下而不是整个html下
+r = tree.xpath('./div[@class="song"]/img/@src')

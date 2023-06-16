@@ -18,3 +18,6 @@ list = ["a", "b", "c", "d"]
 pool = Pool(4)
 # 将列表中每一个元素传递给get_page进行处理
 pool.map(get_page, list)
+
+pool.close()  # 关闭进程池，不再接受新的任务
+pool.join()   # 等待所有的子进程执行完毕

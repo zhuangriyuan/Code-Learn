@@ -10,3 +10,5 @@ browser.get("https://www.bilibili.com/video/BV1Yh411o7Sz/?p=50&spm_id_from=pageD
 
 page_text = browser.page_source
 print(page_text)
+
+browser.quit()

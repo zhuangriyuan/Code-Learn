@@ -22,8 +22,6 @@ search_input.send_keys("iphone")
 search_button = browser.find_element(By.CLASS_NAME,"Tg7LZd")
 search_button.click()
 
-
-
 browser.back()
 time.sleep(1)
 browser.forward()

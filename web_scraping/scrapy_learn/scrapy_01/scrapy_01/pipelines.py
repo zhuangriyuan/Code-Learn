@@ -6,6 +6,7 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+import mysql.connector
 
 
 class Scrapy01Pipeline:
@@ -27,3 +28,24 @@ class Scrapy01Pipeline:
     def close_spider(self,spider):
         print("end")
         self.file.close()
+
+
+class mysqlPipeline:
+    my_db = None
+    cursor = None
+    def open_spider(self,spider):
+        self.my_db = mysql.connector.connect(
+            host="10.0.0.123",
+            user="remote-connect-user",
+            password="970319zhuang",
+            database="test",
+            port=3306,
+            charset="utf8"
+            )
+
+    def process_item(self,item,spider):
+        self.cursor = self.my_db.cursor()
+        self.cursor.execute('INSERT INTO testtable VALUES ("%s", "%s")'%(item['title'],item['test']))
+        self.cursor.commit()
+        return item
+    

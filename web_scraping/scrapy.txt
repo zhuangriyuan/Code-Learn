@@ -1,0 +1,14 @@
+cmd：
+scrapy startproject projectname
+在spiders子目录中创建爬虫文件（scrapy genspider example example.com)
+运行项目（scrapy crawl name)
+
+
+
+settings.py
+LOG_LEVEL = "ERROR"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+ROBOTSTXT_OBEY = False
+ITEM_PIPELINES = {
+    "scrapy_01.pipelines.Scrapy01Pipeline": 300,
+}
